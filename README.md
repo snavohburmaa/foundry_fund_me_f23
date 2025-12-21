@@ -134,14 +134,6 @@ anvil
 make deploy
 ```
 
-Or manually:
-```bash
-forge script script/DeployFundMe.s.sol:DeployFundMe \
-  --rpc-url http://localhost:8545 \
-  --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 \
-  --broadcast
-```
-
 ## 📖 Usage
 
 ### Funding the Contract
@@ -193,10 +185,6 @@ uint256 version = fundMe.getVersion();
 ## 🔗 Network Configuration
 
 The contract uses different Chainlink Price Feed addresses based on the network:
-
-- **Sepolia Testnet**: `0x694AA1769357215DE4FAC081bf1f309aDC325306`
-- **Ethereum Mainnet**: `0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419`
-- **Anvil (Local)**: Deploys a mock price feed
 
 The `HelperConfig.s.sol` contract automatically detects the network and uses the appropriate configuration.
 
@@ -260,10 +248,4 @@ MIT License
 - [Foundry](https://book.getfoundry.sh/) for the development framework
 - [Patrick Collins](https://github.com/PatrickAlphaC) for the tutorial
 
-## 📞 Contact
 
-For questions or issues, please open an issue on GitHub.
-
----
-
-**⚠️ Warning**: This is a learning project. Do not use in production without thorough security audits.
