@@ -2,7 +2,7 @@
 
 A decentralized funding contract built with Solidity and Foundry. Users can send ETH to the contract, which tracks donations and allows the owner to withdraw funds. The contract uses Chainlink Price Feeds to ensure minimum donation amounts in USD.
 
-## 🚀 Features
+##  Features
 
 - **ETH Funding**: Accept ETH donations from users
 - **Minimum Donation**: Enforces a minimum donation of $5 USD using Chainlink Price Feeds
@@ -16,26 +16,6 @@ A decentralized funding contract built with Solidity and Foundry. Users can send
 - [Foundry](https://book.getfoundry.sh/getting-started/installation) (forge, cast, anvil)
 - Node.js (for some dependencies)
 - Git
-
-## 🔧 Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd foundry_fund_me
-```
-
-2. Install dependencies:
-```bash
-forge install
-```
-
-3. Set up environment variables (create a `.env` file):
-```bash
-SEPOLIA_RPC_URL=your_sepolia_rpc_url
-PRIVATE_KEY=your_private_key
-ETHERSCAN_API_KEY=your_etherscan_api_key
-```
 
 ## 📁 Project Structure
 
@@ -61,28 +41,6 @@ foundry_fund_me/
 └── Makefile                 # Make commands
 ```
 
-## 🧪 Testing
-
-Run all tests:
-```bash
-forge test
-```
-
-Run with verbose output:
-```bash
-forge test -vvv
-```
-
-Run specific test:
-```bash
-forge test --match-test testMinDollarIsFive
-```
-
-Run tests on a fork:
-```bash
-forge test --fork-url $SEPOLIA_RPC_URL
-```
-
 ### Test Coverage
 
 The test suite includes:
@@ -92,47 +50,6 @@ The test suite includes:
 - ✅ Funder tracking
 - ✅ Access control (onlyOwner modifier)
 - ✅ Integration tests
-
-Generate coverage report:
-```bash
-forge coverage
-```
-
-## 🚀 Deployment
-
-### Deploy to Sepolia Testnet
-
-Make sure your `.env` file is set up with:
-- `SEPOLIA_RPC_URL`
-- `PRIVATE_KEY`
-- `ETHERSCAN_API_KEY`
-
-```bash
-make deploy-sepolia
-```
-
-Or manually:
-```bash
-forge script script/DeployFundMe.s.sol:DeployFundMe \
-  --rpc-url $SEPOLIA_RPC_URL \
-  --private-key $PRIVATE_KEY \
-  --broadcast \
-  --verify \
-  --etherscan-api-key $ETHERSCAN_API_KEY \
-  --chain sepolia -vvvv
-```
-
-### Deploy to Local Anvil
-
-1. Start Anvil in a separate terminal:
-```bash
-anvil
-```
-
-2. Deploy (using the Makefile):
-```bash
-make deploy
-```
 
 ## 📖 Usage
 
@@ -188,29 +105,6 @@ The contract uses different Chainlink Price Feed addresses based on the network:
 
 The `HelperConfig.s.sol` contract automatically detects the network and uses the appropriate configuration.
 
-## 🛠️ Development
-
-### Build
-```bash
-forge build
-```
-
-### Format
-```bash
-forge fmt
-```
-
-### Gas Snapshots
-```bash
-forge snapshot
-```
-
-### Available Make Commands
-```bash
-make build          # Build the project
-make test           # Run tests with verbose output
-make deploy-sepolia # Deploy to Sepolia testnet
-```
 
 ## 📚 Key Contracts
 
